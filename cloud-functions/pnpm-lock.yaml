@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 specifiers:
   '@types/express': ^4.17.13
@@ -147,13 +147,11 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /anymatch/2.0.0_supports-color@4.5.0:
+  /anymatch/2.0.0:
     resolution: {integrity: sha512-5teOsQWABXHHBFP9y3skS5P3d/WfWXpv3FUpy+LorMrNYaT9pI4oLMQX7jzQ2KklNpGpWHzdCXTDT2Y3XGlZBw==}
     dependencies:
-      micromatch: 3.1.10_supports-color@4.5.0
+      micromatch: 3.1.10
       normalize-path: 2.1.1
-    transitivePeerDependencies:
-      - supports-color
     dev: false
     optional: true
 
@@ -328,15 +326,13 @@ packages:
       raw-body: 2.5.1
       type-is: 1.6.18
       unpipe: 1.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: false
 
-  /braces/2.3.2_supports-color@4.5.0:
+  /braces/2.3.2:
     resolution: {integrity: sha512-aNdbnj9P8PjdXU4ybaWLK2IF3jc/EoDYbC7AazW6to3TRsfXxscC9UXOB5iDiEQrkyIbWp2SLQda4+QAa7nc3w==}
     engines: {node: '>=0.10.0'}
     dependencies:
@@ -346,12 +342,10 @@ packages:
       fill-range: 4.0.0
       isobject: 3.0.1
       repeat-element: 1.1.4
-      snapdragon: 0.8.2_supports-color@4.5.0
+      snapdragon: 0.8.2
       snapdragon-node: 2.1.1
       split-string: 3.1.0
       to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: false
     optional: true
 
@@ -522,25 +516,23 @@ packages:
       parse5-htmlparser2-tree-adapter: 7.0.0
     dev: false
 
-  /chokidar/2.1.8_supports-color@4.5.0:
+  /chokidar/2.1.8:
     resolution: {integrity: sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==}
     deprecated: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
     dependencies:
-      anymatch: 2.0.0_supports-color@4.5.0
+      anymatch: 2.0.0
       async-each: 1.0.3
-      braces: 2.3.2_supports-color@4.5.0
+      braces: 2.3.2
       glob-parent: 3.1.0
       inherits: 2.0.4
       is-binary-path: 1.0.1
       is-glob: 4.0.3
       normalize-path: 3.0.0
       path-is-absolute: 1.0.1
-      readdirp: 2.2.1_supports-color@4.5.0
+      readdirp: 2.2.1
       upath: 1.2.0
     optionalDependencies:
       fsevents: 1.2.13
-    transitivePeerDependencies:
-      - supports-color
     dev: false
     optional: true
 
@@ -751,27 +743,9 @@ packages:
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
     dependencies:
       ms: 2.0.0
     dev: false
-
-  /debug/2.6.9_supports-color@4.5.0:
-    resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    dependencies:
-      ms: 2.0.0
-      supports-color: 4.5.0
-    dev: false
-    optional: true
 
   /decamelize/1.2.0:
     resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
@@ -1055,19 +1029,17 @@ packages:
       strip-eof: 1.0.0
     dev: false
 
-  /expand-brackets/2.1.4_supports-color@4.5.0:
+  /expand-brackets/2.1.4:
     resolution: {integrity: sha512-w/ozOKR9Obk3qoWeY/WDi6MFta9AoMR+zud60mdnbniMcBxRuFJyDt2LdX/14A1UABeqk+Uk+LDfUpvoGKppZA==}
     engines: {node: '>=0.10.0'}
     dependencies:
-      debug: 2.6.9_supports-color@4.5.0
+      debug: 2.6.9
       define-property: 0.2.5
       extend-shallow: 2.0.1
       posix-character-classes: 0.1.1
       regex-not: 1.0.2
-      snapdragon: 0.8.2_supports-color@4.5.0
+      snapdragon: 0.8.2
       to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: false
     optional: true
 
@@ -1106,8 +1078,6 @@ packages:
       type-is: 1.6.18
       utils-merge: 1.0.1
       vary: 1.1.2
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /ext/1.6.0:
@@ -1133,20 +1103,18 @@ packages:
     dev: false
     optional: true
 
-  /extglob/2.0.4_supports-color@4.5.0:
+  /extglob/2.0.4:
     resolution: {integrity: sha512-Nmb6QXkELsuBr24CJSkilo6UHHgbekK5UiZgfE6UHD3Eb27YC6oD+bhcT+tJ6cl8dmsgdQxnWlcry8ksBIBLpw==}
     engines: {node: '>=0.10.0'}
     dependencies:
       array-unique: 0.3.2
       define-property: 1.0.0
-      expand-brackets: 2.1.4_supports-color@4.5.0
+      expand-brackets: 2.1.4
       extend-shallow: 2.0.1
       fragment-cache: 0.2.1
       regex-not: 1.0.2
-      snapdragon: 0.8.2_supports-color@4.5.0
+      snapdragon: 0.8.2
       to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: false
     optional: true
 
@@ -1194,8 +1162,6 @@ packages:
       parseurl: 1.3.3
       statuses: 2.0.1
       unpipe: 1.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /find-up/2.1.0:
@@ -1425,9 +1391,6 @@ packages:
       babel-runtime: 6.26.0
       node.extend: 2.0.2
       webpack: 3.12.0
-    transitivePeerDependencies:
-      - webpack-cli
-      - webpack-command
     dev: false
 
   /iconv-lite/0.4.24:
@@ -1835,25 +1798,23 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /micromatch/3.1.10_supports-color@4.5.0:
+  /micromatch/3.1.10:
     resolution: {integrity: sha512-MWikgl9n9M3w+bpsY3He8L+w9eF9338xRl8IAO5viDizwSzziFEyUzo2xrrloB64ADbTf8uA8vRqqttDTOmccg==}
     engines: {node: '>=0.10.0'}
     dependencies:
       arr-diff: 4.0.0
       array-unique: 0.3.2
-      braces: 2.3.2_supports-color@4.5.0
+      braces: 2.3.2
       define-property: 2.0.2
       extend-shallow: 3.0.2
-      extglob: 2.0.4_supports-color@4.5.0
+      extglob: 2.0.4
       fragment-cache: 0.2.1
       kind-of: 6.0.3
-      nanomatch: 1.2.13_supports-color@4.5.0
+      nanomatch: 1.2.13
       object.pick: 1.3.0
       regex-not: 1.0.2
-      snapdragon: 0.8.2_supports-color@4.5.0
+      snapdragon: 0.8.2
       to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: false
     optional: true
 
@@ -1930,7 +1891,7 @@ packages:
     dev: false
     optional: true
 
-  /nanomatch/1.2.13_supports-color@4.5.0:
+  /nanomatch/1.2.13:
     resolution: {integrity: sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==}
     engines: {node: '>=0.10.0'}
     dependencies:
@@ -1943,10 +1904,8 @@ packages:
       kind-of: 6.0.3
       object.pick: 1.3.0
       regex-not: 1.0.2
-      snapdragon: 0.8.2_supports-color@4.5.0
+      snapdragon: 0.8.2
       to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: false
     optional: true
 
@@ -2361,15 +2320,13 @@ packages:
       util-deprecate: 1.0.2
     dev: false
 
-  /readdirp/2.2.1_supports-color@4.5.0:
+  /readdirp/2.2.1:
     resolution: {integrity: sha512-1JU/8q+VgFZyxwrJ+SVIOsh+KywWGpds3NTqikiKpDMZWScmAYyKIgqkO+ARvNWJfXeXR1zxz7aHF4u4CyH6vQ==}
     engines: {node: '>=0.10'}
     dependencies:
       graceful-fs: 4.2.10
-      micromatch: 3.1.10_supports-color@4.5.0
+      micromatch: 3.1.10
       readable-stream: 2.3.7
-    transitivePeerDependencies:
-      - supports-color
     dev: false
     optional: true
 
@@ -2495,8 +2452,6 @@ packages:
       on-finished: 2.4.1
       range-parser: 1.2.1
       statuses: 2.0.1
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /serve-static/1.15.0:
@@ -2507,8 +2462,6 @@ packages:
       escape-html: 1.0.3
       parseurl: 1.3.3
       send: 0.18.0
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /set-blocking/2.0.0:
@@ -2584,20 +2537,18 @@ packages:
     dev: false
     optional: true
 
-  /snapdragon/0.8.2_supports-color@4.5.0:
+  /snapdragon/0.8.2:
     resolution: {integrity: sha512-FtyOnWN/wCHTVXOMwvSv26d+ko5vWlIDD6zoUJ7LW8vh+ZBC8QdljveRP+crNrtBwioEUWy/4dMtbBjA4ioNlg==}
     engines: {node: '>=0.10.0'}
     dependencies:
       base: 0.11.2
-      debug: 2.6.9_supports-color@4.5.0
+      debug: 2.6.9
       define-property: 0.2.5
       extend-shallow: 2.0.1
       map-cache: 0.2.2
       source-map: 0.5.7
       source-map-resolve: 0.5.3
       use: 3.1.1
-    transitivePeerDependencies:
-      - supports-color
     dev: false
     optional: true
 
@@ -2959,26 +2910,22 @@ packages:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
     dev: false
 
-  /watchpack-chokidar2/2.0.1_supports-color@4.5.0:
+  /watchpack-chokidar2/2.0.1:
     resolution: {integrity: sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww==}
     requiresBuild: true
     dependencies:
-      chokidar: 2.1.8_supports-color@4.5.0
-    transitivePeerDependencies:
-      - supports-color
+      chokidar: 2.1.8
     dev: false
     optional: true
 
-  /watchpack/1.7.5_supports-color@4.5.0:
+  /watchpack/1.7.5:
     resolution: {integrity: sha512-9P3MWk6SrKjHsGkLT2KHXdQ/9SNkyoJbabxnKOoJepsvJjJG8uYTR3yTPxPQvNDI3w4Nz1xnE0TLHK4RIVe/MQ==}
     dependencies:
       graceful-fs: 4.2.10
       neo-async: 2.6.2
     optionalDependencies:
       chokidar: 3.5.3
-      watchpack-chokidar2: 2.0.1_supports-color@4.5.0
-    transitivePeerDependencies:
-      - supports-color
+      watchpack-chokidar2: 2.0.1
     dev: false
 
   /webpack-sources/1.4.3:
@@ -2992,14 +2939,6 @@ packages:
     resolution: {integrity: sha512-Sw7MdIIOv/nkzPzee4o0EdvCuPmxT98+vVpIvwtcwcF1Q4SDSNp92vwcKc4REe7NItH9f1S4ra9FuQ7yuYZ8bQ==}
     engines: {node: '>=4.3.0 <5.0.0 || >=5.10'}
     hasBin: true
-    peerDependencies:
-      webpack-cli: '*'
-      webpack-command: '*'
-    peerDependenciesMeta:
-      webpack-cli:
-        optional: true
-      webpack-command:
-        optional: true
     dependencies:
       acorn: 5.7.4
       acorn-dynamic-import: 2.0.2
@@ -3020,7 +2959,7 @@ packages:
       supports-color: 4.5.0
       tapable: 0.2.9
       uglifyjs-webpack-plugin: 0.4.6_webpack@3.12.0
-      watchpack: 1.7.5_supports-color@4.5.0
+      watchpack: 1.7.5
       webpack-sources: 1.4.3
       yargs: 8.0.2
     dev: false
