@@ -1,20 +1,24 @@
 # 一起听播客
 
-<img src="https://yenche123-1300458905.cos.ap-shanghai.myqcloud.com/podcast-together/screenshot_index.png" width="700" />
+<img src="./resources/screenshot_index.png" width="700" />
 
-<img src="https://yenche123-1300458905.cos.ap-shanghai.myqcloud.com/podcast-together/screenshot_listening.png" width="700" />
+<img src="./resources/screenshot_listening.png" width="700" />
 
 > 跟你的好友一起实时连线听播客！
+
+<br>
 
 ## 😎 如何使用
 
 1. 打开小宇宙 App，在单集详情页，点击屏幕右上角的分享按钮（如下图所示），再点击复制链接。
 
-<img src="https://yenche123-1300458905.cos.ap-shanghai.myqcloud.com/podcast-together/xyz_share.jpg" width="500" />
+<img src="./resources/xyz_share.jpg" width="500" />
 
-2. 访问 [https://fm.lemonsjtu.cn/](https://fm.lemonsjtu.cn/) 创建房间，依页面的提示黏贴上一步复制到的链接，即可创建能跟好友一起实时聆听的播客房间啦！
+2. 访问 [https://podcastogether.com/](https://podcastogether.com/) 创建房间，依页面的提示黏贴上一步复制到的链接，即可创建能跟好友一起实时聆听的播客房间啦！
 
 详情参见[使用指南](https://yenche.zhubai.love/posts/2172097942360440832)
+
+<br>
 
 ## 🎧 介绍
 
@@ -30,17 +34,17 @@
 
 目前已知支持 `xiaoyuzhoufm.com/episode/` 或者 `podcasts.apple.com/cn/` 的链接（不支持短链），后者解析稍慢是正常的，如果解析失败不妨稍后再尝试。
 
-另外，还支持 https 协议的 CDN 链接，也就是你上传 `.mp3` 文件至任意可公网访问的云上，获得 https 链接后即可黏贴到 [https://fm.lemonsjtu.cn/create](https://fm.lemonsjtu.cn/create) 中一起听。
+另外，还支持 https 协议的 CDN 链接，也就是你上传 `.mp3` 文件至任意可公网访问的云上，获得 https 链接后即可黏贴到 [https://podcastogether.com/create](https://podcastogether.com/create) 中一起听。
 
 更多音源详情请参见[这里](https://github.com/yenche123/podcast-together/discussions/3)
 
 ### 3 支持深色模式
 
-<img src="https://yenche123-1300458905.cos.ap-shanghai.myqcloud.com/podcast-together/screenshot_index_dm2.png" width="700" />
+<img src="./resources/screenshot_index_dm3.png" width="700" />
 
-<img src="https://yenche123-1300458905.cos.ap-shanghai.myqcloud.com/podcast-together/screenshot_listening_dm.png" width="700" />
+<img src="./resources/screenshot_listening_dm.png" width="700" />
 
-<img src="https://yenche123-1300458905.cos.ap-shanghai.myqcloud.com/podcast-together/phone_room.png" width="500" />
+<img src="./resources/phone_room.png" width="500" />
 
 从一开始就支持深色模式！晚上一起听，再也不亮瞎眼🙈
 
@@ -48,27 +52,21 @@
 
 功能这么少？一起听，应该如此简单！
 
+<br>
+
 ## 🧑‍💻 自行构建/部署
 
 非常欢迎自己兜一套减轻我的云服务资源，详情参见[语雀文档](https://www.yuque.com/cuiyanzhe/sx698m/etgegl)
 
+<br>
+
 ## ✉️ 联系我
 
-1. 微信群
+1. Github [讨论区](https://github.com/yenche123/podcast-together/discussions)
 
-<img src="https://yenche123-1300458905.cos.ap-shanghai.myqcloud.com/podcast-together/wecom_qrcode.png" width="200" />
+2. [Email](mailto:tsuiyenche@outlook.com)
 
-2. Github [讨论区](https://github.com/yenche123/podcast-together/discussions)
-
-3. [我的飞书](https://www.feishu.cn/invitation/page/add_contact/?token=affgb85a-37d6-470f-8e50-42dc6de3f57c)
-
-<img src="https://yenche123-1300458905.cos.ap-shanghai.myqcloud.com/podcast-together/feishu_qrcode.png" width="200" />
-
-请备注 "一起听播客 + 说明来意"
-
-4. [Email](mailto:tsuiyenche@outlook.com)
-
----
+<br>
 
 ## 特别鸣谢
 
@@ -112,9 +110,11 @@
 
 谢谢你看到这里！
 
+<br>
+
 ## 支持我
 
-<img src="./public/appreciation_code.jpg" width="200" />
+<img src="./resources/appreciation_code.jpg" width="200" />
 
 如果有帮助到你，欢迎向我打赏，请我喝☕
 

@@ -1,6 +1,8 @@
 import cloud from "@/cloud-sdk"
 import * as cheerio from "cheerio"
 
+type CheerioAPI = ReturnType<typeof cheerio.load>
+
 interface ContentData {
   infoType: "podcast"
   audioUrl: string
@@ -54,7 +56,7 @@ exports.main = async function (ctx: FunctionContext): Promise<ResType> {
  * 判断是否为 .mp3 或 .m4a 结尾的链接
  */
 function judgeIsCdnLink(link: string): boolean {
-  const reg = /^http(s)?:\/\/[^\s\/]{2,40}\/\S{2,240}\.(mp3|m4a)[\?=\w]*$/g
+  const reg = /^http(s)?:\/\/[\w\.-]*\w{1,32}\.\w{2,6}\/\S+.(mp3|m4a)[\?=\w]*$/g
   //@ts-ignore
   let matches = link.matchAll(reg)
   for(let match of matches) {
@@ -246,22 +248,23 @@ function parseHtml(html: string, originLink: string): ResType {
     }
   })
 
+  // 适配 pod.link
+  const isPodLink = originLink.includes("pod.link")
+  if(isPodLink) {
+    let forPodLink = _handleForPodLink($, html)
+    if(forPodLink.title) title = forPodLink.title
+    if(forPodLink.description) description = forPodLink.description
+    if(forPodLink.seriesName) seriesName = forPodLink.seriesName
+    if(forPodLink.seriesUrl) seriesUrl = forPodLink.seriesUrl
+    if(forPodLink.audioUrl) audioUrl = forPodLink.audioUrl
+  }
+
   // 适配 youzhiyouxing.cn 的图片
   let isYZYX = originLink.includes("youzhiyouxing.cn")
-  if(!imageUrl && isYZYX) {
-    $(".lazy-image-container img").each((i, el) => {
-      const theEl = $(el)
-      const src = theEl.attr("data-src")
-      if(src) imageUrl = src
-    })
-  }
-  // 适配 youzhiyouxing.cn 的播客名称
-  if(!seriesName && isYZYX) {
-    $("body .tw-text-14.tw-leading-none").each((i, el) => {
-      const theEl = $(el)
-      const elText = theEl.text()
-      if(elText) seriesName = elText.trim()
-    })
+  if(isYZYX) {
+    const forYZYX = _handleForYouZhiYouXing($)
+    if(!imageUrl && forYZYX.imageUrl) imageUrl = forYZYX.imageUrl
+    if(!seriesName && forYZYX.seriesName) seriesName = forYZYX.seriesName
   }
 
   // 适配微信公众号
@@ -306,6 +309,71 @@ function parseHtml(html: string, originLink: string): ResType {
   return rData
 }
 
+// 处理 podlink 的情况
+function _handleForPodLink(
+  $: CheerioAPI,
+  html: string,
+) {
+
+  let title = ""
+  let description = ""
+  let seriesName = ""
+  let seriesUrl = ""
+  let audioUrl = ""
+
+  // 寻找 title / seriesName
+  $(".aj.ff.gp .am.dq .am.ao").each((i, el) => {
+    const theEl = $(el)
+    const elText = theEl.text()
+    if(elText) {
+      if(i < 1) title = elText
+      else seriesName = elText
+    }
+  })
+
+  // 寻找 description
+  $(".cx .ef.eg").each((i, el) => {
+    const theEl = $(el)
+    const elText = theEl.text()
+    if(elText) description = elText.trim() 
+  })
+
+  // 根据 title 寻找 audioUrl
+  if(title) {
+    // 截断 html
+    let newHtml = html
+    let idx = newHtml.indexOf("window.__STATE__")
+    if(idx > 0) {
+      newHtml = newHtml.substring(idx)
+      let idx2 = newHtml.indexOf(title)
+      if(idx2 > 0) {
+        newHtml = newHtml.substring(idx2)
+        audioUrl = getAudioUrl(newHtml, { isMp: false })
+      }
+    }
+  }
+
+  return { title, description, seriesName, seriesUrl, audioUrl }
+}
+
+function _handleForYouZhiYouXing(
+  $: CheerioAPI,
+) {
+  let imageUrl = ""
+  let seriesName = ""
+  $(".lazy-image-container img").each((i, el) => {
+    const theEl = $(el)
+    const src = theEl.attr("data-src")
+    if(src) imageUrl = src
+  })
+  $("body .tw-text-14.tw-leading-none").each((i, el) => {
+    const theEl = $(el)
+    const elText = theEl.text()
+    if(elText) seriesName = elText.trim()
+  })
+  return { imageUrl, seriesName }
+}
+
 interface GetAudioUrlParam2 {
   isMp: boolean
 }
@@ -313,9 +381,16 @@ interface GetAudioUrlParam2 {
 function getAudioUrl(html: string, opt: GetAudioUrlParam2): string {
 
   // 全局查找 mp3 或 m4a 的链接
-  const reg = /http(s)?:\/\/[^\s\/]{2,40}\/\S{2,240}\.(mp3|m4a)/g
+  const reg0 = /http(s)?:\/\/[^\s\/\"\']{2,40}\/[^\s\"\']{2,240}\.(mp3|m4a)\?[^\s\/\"\']{3,240}/g
   //@ts-ignore
-  let matches = html.matchAll(reg)
+  let matches = html.matchAll(reg0)
+  for(let match0 of matches) {
+    return match0[0]
+  }
+
+  const reg = /http(s)?:\/\/[^\s\/\"\']{2,40}\/[^\s\"\']{2,240}\.(mp3|m4a)/g
+  //@ts-ignore
+  matches = html.matchAll(reg)
   for(let match1 of matches) {
     return match1[0]
   }
